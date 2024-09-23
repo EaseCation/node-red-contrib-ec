@@ -1,0 +1,42 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ec-block-interact', {
+        category: 'EC对抗跑酷',
+        color: '#FF5722',
+        defaults: {
+            name: { value: "" },
+            defaultState: { value: "off", required: true },
+            blockCoords: { value: "", required: true }
+        },
+        inputs: 0,
+        outputs: 1,
+        icon: "fa-cube",
+        label: function() {
+            return this.name || "EC 方块交互（点击）";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="ec-block-interact">
+    <div class="form-row">
+        <label for="node-input-name">
+            <i class="fa fa-tag"></i> 名称
+        </label>
+        <input type="text" id="node-input-name" placeholder="可视化名称（仅用于编辑器中显示）">
+    </div>
+    <div class="form-row"></div>
+        <label for="node-input-defaultState">
+            <i class="fa fa-power-off"></i> 默认状态
+        </label>
+        <select id="node-input-defaultState">
+            <option value="on">开启</option>
+            <option value="off">关闭</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-blockCoords">
+            <i class="fa fa-map-marker"></i> 方块坐标
+        </label>
+        <input type="text" id="node-input-blockCoords" placeholder="输入方块坐标">
+    </div>
+</script>

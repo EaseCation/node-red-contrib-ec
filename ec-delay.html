@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ec-delay', {
+        category: 'EC对抗跑酷',
+        color: '#FFFFFF',
+        defaults: {
+            name: { value: "" },
+            delayTime: { value: 1000, required: true }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "fa-clock-o",
+        label: function() {
+            return this.name || "EC 延迟执行";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="ec-delay">
+    <div class="form-row">
+        <label for="node-input-name">
+            <i class="fa fa-tag"></i> 名称
+        </label>
+        <input type="text" id="node-input-name" placeholder="可视化名称（仅用于编辑器中显示）">
+    </div>
+    <div class="form-row">
+        <label for="node-input-delayTime">
+            <i class="fa fa-clock-o"></i> 延迟时间 (毫秒)
+        </label>
+        <input type="number" id="node-input-delayTime" min="0" placeholder="1000">
+    </div>
+</script>

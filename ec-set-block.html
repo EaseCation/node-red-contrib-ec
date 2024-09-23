@@ -1,0 +1,39 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ec-set-block', {
+        category: 'EC对抗跑酷',
+        color: '#ED9A8C',
+        defaults: {
+            name: { value: "" },
+            blockRange: { value: [], required: true },
+            blockId: { value: "", required: true }
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "fa-cube",
+        label: function() {
+            return this.name || "EC 设置方块";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="ec-set-block">
+    <div class="form-row">
+        <label for="node-input-name">
+            <i class="fa fa-tag"></i> 名称
+        </label>
+        <input type="text" id="node-input-name" placeholder="可视化名称（仅用于编辑器中显示）">
+    </div>
+    <div class="form-row">
+        <label for="node-input-blockRange">
+            <i class="fa fa-map"></i> 方块范围
+        </label>
+        <input type="text" id="node-input-blockRange" placeholder="Enter block range as JSON">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-blockId">
+            <i class="fa fa-cube"></i> 方块ID
+        </label>
+        <input type="text" id="node-input-blockId" placeholder="Block ID">
+    </div>
+</script>

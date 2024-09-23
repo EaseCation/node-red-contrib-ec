@@ -1,0 +1,23 @@
+{
+  "name": "node-red-contrib-ec",
+  "version": "1.0.0",
+  "description": "A Node-RED node for EaseCation",
+  "dependencies": {},
+  "node-red": {
+    "nodes": {
+      "ec-trigger-area": "ec-trigger-area.js",
+      "ec-delay": "ec-delay.js",
+      "ec-timer": "ec-timer.js",
+      "ec-set-block": "ec-set-block.js",
+      "ec-move-entity": "ec-move-entity.js",
+      "ec-teleport-player": "ec-teleport-player.js",
+      "ec-custom-ui": "ec-custom-ui.js",
+      "ec-block-interact": "ec-block-interact.js",
+      "ec-play-sound": "ec-play-sound.js",
+      "ec-give-effect": "ec-give-effect.js"
+    }
+  },
+  "keywords": ["node-red", "ec-region", "minecraft"],
+  "author": "boybook",
+  "license": "MIT"
+}

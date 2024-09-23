@@ -1,0 +1,43 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ec-trigger-area', {
+        category: 'EC对抗跑酷',
+        color: '#FF8F2C',
+        defaults: {
+            name: { value: "" },
+            coordRange: { value: [], required: true },
+            triggerCondition: { value: "once", required: true }
+        },
+        inputs: 0,
+        outputs: 1,
+        outputLable: "符合触发条件时",
+        icon: "fa-map-marker",
+        label: function() {
+            return this.name || "EC 触发区域";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="ec-trigger-area">
+    <div class="form-row">
+        <label for="node-input-name">
+            <i class="fa fa-tag"></i> 名称
+        </label>
+        <input type="text" id="node-input-name" placeholder="可视化名称（仅用于编辑器中显示）">
+    </div>
+    <div class="form-row">
+        <label for="node-input-coordRange">
+            <i class="fa fa-map-marker"></i> 坐标范围
+        </label>
+        <input type="text" id="node-input-coordRange" placeholder="Enter coordinates as JSON">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-triggerCondition">
+            <i class="fa fa-bell"></i> 触发条件
+        </label>
+        <select id="node-input-triggerCondition">
+            <option value="once">任意人进入 (触发一次)</option>
+            <option value="every">任意人进入 (每次触发)</option>
+        </select>
+    </div>
+</script>
