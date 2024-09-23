@@ -1,7 +1,7 @@
 <script type="text/javascript">
     RED.nodes.registerType('ec-timer', {
         category: 'EC蓝图/时间',
-        color: '#FFFFFF',
+        color: '#CA7CEA',
         defaults: {
             name: { value: "" },
             defaultState: { value: true, required: true },
@@ -11,10 +11,11 @@
         },
         inputs: 1,
         outputs: 1,
-        icon: "fa-clock",
+        icon: "font-awesome/fa-circle-o-notch",
         label: function() {
-            return this.name || "EC 计时器";
-        }
+            return (this.name || "计时器") + " (每" + this.interval + "ms)";
+        },
+        paletteLabel: "计时器",
     });
 </script>
 
@@ -58,4 +59,8 @@
         </label>
         <input type="text" id="node-input-uiText" placeholder="输入UI本地化文本key">
     </div>
+</script>
+
+<script type="text/html" data-help-name="ec-timer">
+    <p>每隔一段时间触发一次。</p>
 </script>

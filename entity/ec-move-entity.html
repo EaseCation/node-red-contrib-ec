@@ -1,7 +1,7 @@
 <script type="text/javascript">
     RED.nodes.registerType('ec-move-entity', {
         category: 'EC蓝图/实体',
-        color: '#45ADFF',
+        color: '#6AD56E',
         defaults: {
             name: { value: "" },
             track: { value: [], required: true },
@@ -9,10 +9,11 @@
         },
         inputs: 1,
         outputs: 0,
-        icon: "fa-car",
+        icon: "font-awesome/fa-car",
         label: function() {
-            return this.name || "EC 运动的实体";
-        }
+            return this.name || "运动的实体";
+        },
+        paletteLabel: "运动的实体",
     });
 </script>
 
@@ -36,4 +37,9 @@
         </label>
         <input type="number" id="node-input-speed" min="0" placeholder="1">
     </div>
+</script>
+
+<script type="text/html" data-help-name="ec-move-entity">
+    <p>生成实体，并控制实体沿着指定的轨道移动。</p>
+    <p>还未完工</p>
 </script>

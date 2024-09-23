@@ -10,10 +10,11 @@
         },
         inputs: 1,
         outputs: 1,
-        icon: "fa-cube",
+        icon: "font-awesome/fa-cube",
         label: function() {
-            return this.name || "EC 方块交互（点击）";
-        }
+            return this.name || "方块交互（点击）";
+        },
+        paletteLabel: "方块交互（点击）",
     });
 </script>
 
@@ -48,4 +49,8 @@
             <input type="checkbox" id="node-input-autoDisable">
         </label>
     </div>
+</script>
+
+<script type="text/html" data-help-name="ec-block-interact">
+    <p>玩家点击地图中的方块，将触发。</p>
 </script>

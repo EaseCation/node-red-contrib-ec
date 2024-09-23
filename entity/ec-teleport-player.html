@@ -9,10 +9,11 @@
         },
         inputs: 1,
         outputs: 0,
-        icon: "fa-location-arrow",
+        icon: "font-awesome/fa-location-arrow",
         label: function() {
-            return this.name || "EC 传送玩家";
-        }
+            return this.name || "传送玩家";
+        },
+        paletteLabel: "传送玩家",
     });
 </script>
 
@@ -36,4 +37,8 @@
         </label>
         <input type="text" id="node-input-targetCoords" placeholder="输入目标坐标">
     </div>
+</script>
+
+<script type="text/html" data-help-name="ec-teleport-player">
+    <p>将有效范围内的玩家，传送到指定坐标。</p>
 </script>

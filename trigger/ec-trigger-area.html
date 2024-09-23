@@ -1,7 +1,7 @@
 <script type="text/javascript">
     RED.nodes.registerType('ec-trigger-area', {
         category: 'EC蓝图/触发器',
-        color: '#FF8F2C',
+        color: '#FFB72C',
         defaults: {
             name: { value: "" },
             defaultState: { value: true, required: true },
@@ -10,11 +10,12 @@
         },
         inputs: 1,
         outputs: 1,
-        outputLable: "符合触发条件时",
-        icon: "fa-map-marker",
+        outputLables: ["玩家进入范围后触发"],
+        icon: "font-awesome/fa-map-marker",
         label: function() {
-            return this.name || "EC 触发区域";
-        }
+            return (this.name || "触发区域") + (this.coordRange ? (" " + this.coordRange) : "");
+        },
+        paletteLabel: "触发区域",
     });
 </script>
 
@@ -49,4 +50,8 @@
             <input type="checkbox" id="node-input-autoDisable">
         </label>
     </div>
+</script>
+
+<script type="text/html" data-help-name="ec-trigger-area">
+    <p>玩家进入指定坐标范围，将触发。</p>
 </script>

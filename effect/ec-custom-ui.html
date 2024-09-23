@@ -1,7 +1,7 @@
 <script type="text/javascript">
     RED.nodes.registerType('ec-custom-ui', {
         category: 'EC蓝图/特效',
-        color: '#F0E68C',
+        color: '#FFE600',
         defaults: {
             name: { value: "" },
             uiType: { value: "Title", required: true },
@@ -9,10 +9,21 @@
         },
         inputs: 1,
         outputs: 0,
-        icon: "fa-desktop",
+        icon: "font-awesome/fa-font",
         label: function() {
-            return this.name || "EC 显示UI";
-        }
+            return (this.name || "显示UI") + (() => {
+                if (this.uiText && this.uiText.length > 0) {
+                    if (this.uiText.length > 20) {
+                        return " (" + this.uiText.substring(0, 20) + "...)";
+                    } else {
+                        return " (" + this.uiText + ")";
+                    }
+                } else {
+                    return "";
+                }
+            })();
+        },
+        paletteLabel: "显示UI",
     });
 </script>
 
@@ -39,4 +50,8 @@
         </label>
         <input type="text" id="node-input-uiText" placeholder="输入UI本地化文本key">
     </div>
+</script>
+
+<script type="text/html" data-help-name="ec-custom-ui">
+    <p>显示自定义UI。</p>
 </script>

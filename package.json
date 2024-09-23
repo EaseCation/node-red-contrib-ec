@@ -5,17 +5,17 @@
   "dependencies": {},
   "node-red": {
     "nodes": {
-      "ec-trigger-area": "ec-trigger-area.js",
-      "ec-block-interact": "ec-block-interact.js",
-      "ec-delay": "ec-delay.js",
-      "ec-timer": "ec-timer.js",
-      "ec-set-block": "ec-set-block.js",
-      "ec-move-entity": "ec-move-entity.js",
-      "ec-teleport-player": "ec-teleport-player.js",
-      "ec-custom-ui": "ec-custom-ui.js",
-      "ec-play-sound": "ec-play-sound.js",
-      "ec-give-effect": "ec-give-effect.js",
-      "ec-terminate": "ec-terminate.js"
+      "ec-trigger-area": "trigger/ec-trigger-area.js",
+      "ec-block-interact": "trigger/ec-block-interact.js",
+      "ec-delay": "time/ec-delay.js",
+      "ec-timer": "time/ec-timer.js",
+      "ec-set-block": "block/ec-set-block.js",
+      "ec-move-entity": "entity/ec-move-entity.js",
+      "ec-teleport-player": "entity/ec-teleport-player.js",
+      "ec-custom-ui": "effect/ec-custom-ui.js",
+      "ec-play-sound": "effect/ec-play-sound.js",
+      "ec-give-effect": "effect/ec-give-effect.js",
+      "ec-terminate": "global/ec-terminate.js"
     }
   },
   "keywords": ["node-red", "ec-region", "minecraft"],

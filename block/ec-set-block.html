@@ -9,10 +9,11 @@
         },
         inputs: 1,
         outputs: 0,
-        icon: "fa-cube",
+        icon: "font-awesome/fa-cubes",
         label: function() {
-            return this.name || "EC 设置方块";
-        }
+            return this.name || "设置方块";
+        },
+        paletteLabel: "设置方块",
     });
 </script>
 
@@ -36,4 +37,8 @@
         </label>
         <input type="text" id="node-input-blockId" placeholder="输入方块ID">
     </div>
+</script>
+
+<script type="text/html" data-help-name="ec-set-block">
+    <p>指定范围内的设置方块（setBlock）。</p>
 </script>

@@ -1,17 +1,18 @@
 <script type="text/javascript">
     RED.nodes.registerType('ec-delay', {
         category: 'EC蓝图/时间',
-        color: '#FFFFFF',
+        color: '#E5E5E5',
         defaults: {
             name: { value: "" },
             delayTime: { value: 1000, required: true }
         },
         inputs: 1,
         outputs: 1,
-        icon: "fa-clock-o",
+        icon: "font-awesome/fa-clock-o",
         label: function() {
-            return this.name || "EC 延迟执行";
-        }
+            return (this.name || "延迟执行") + " (" + this.delayTime + "ms)";
+        },
+        paletteLabel: "延迟执行",
     });
 </script>
 
@@ -28,4 +29,8 @@
         </label>
         <input type="number" id="node-input-delayTime" min="0" placeholder="1000">
     </div>
+</script>
+
+<script type="text/html" data-help-name="ec-delay">
+    <p>延迟一段时间（毫秒）后再执行下一个节点。</p>
 </script>

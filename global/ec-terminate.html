@@ -1,17 +1,18 @@
 <script type="text/javascript">
     RED.nodes.registerType('ec-terminate', {
         category: 'EC蓝图/全局',
-        color: '#CA7CEA',
+        color: '#F55B5B',
         defaults: {
             name: { value: "" },
             result: { value: "", required: true }
         },
         inputs: 1,
         outputs: 0,
-        icon: "fa-clock",
+        icon: "font-awesome/fa-arrow-circle-o-right",
         label: function() {
-            return this.name || "EC 结束流程";
-        }
+            return this.name || "结束流程";
+        },
+        paletteLabel: "结束流程"
     });
 </script>
 
@@ -29,4 +30,8 @@
         </label>
         <input type="text" id="node-input-result" placeholder="输入游戏结果">
     </div>
+</script>
+
+<script type="text/html" data-help-name="ec-terminate">
+    <p>结束流程，并返回游戏结果，传递到游戏状态机。</p>
 </script>

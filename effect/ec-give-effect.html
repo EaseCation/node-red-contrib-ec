@@ -1,7 +1,7 @@
 <script type="text/javascript">
     RED.nodes.registerType('ec-give-effect', {
         category: 'EC蓝图/特效',
-        color: '#F0E68C',
+        color: '#7FE300',
         defaults: {
             name: { value: "" },
             coordRange: { value: "", required: true },
@@ -12,10 +12,11 @@
         },
         inputs: 1,
         outputs: 0,
-        icon: "fa-magic",
+        icon: "font-awesome/fa-magic",
         label: function() {
-            return this.name || "EC 给与状态效果";
-        }
+            return (this.name || "给予状态效果") + " (" + this.effectId + ")";
+        },
+        paletteLabel: "给予状态效果",
     });
 </script>
 
@@ -56,4 +57,8 @@
             <input type="checkbox" id="node-input-autoDisable">
         </label>
     </div>
+</script>
+
+<script type="text/html" data-help-name="ec-give-effect">
+    <p>给予指定坐标范围内的玩家指定状态效果。</p>
 </script>
