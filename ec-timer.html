@@ -4,9 +4,10 @@
         color: '#CA7CEA',
         defaults: {
             name: { value: "" },
+            defaultState: { value: "false", required: true },
             interval: { value: 1000, required: true },
-            defaultState: { value: "off", required: true },
-            uiText: { value: "", required: false }
+            uiType: { value: "None", required: true },
+            uiText: { value: "", required: true }
         },
         inputs: 1,
         outputs: 1,
@@ -25,6 +26,16 @@
         <input type="text" id="node-input-name" placeholder="可视化名称（仅用于编辑器中显示）">
     </div>
     <div class="form-row">
+        <label for="node-input-defaultState">
+            <i class="fa fa-power-off"></i> 默认状态
+        </label>
+        <select id="node-input-defaultState">
+            <option value="true">开启</option>
+            <option value="false">关闭</option>
+        </select>
+    </div>
+
+    <div class="form-row">
         <label for="node-input-interval">
             <i class="fa fa-clock"></i> 时间间隔 (毫秒)
         </label>
@@ -32,19 +43,20 @@
     </div>
 
     <div class="form-row">
-        <label for="node-input-defaultState">
-            <i class="fa fa-power-off"></i> 默认状态
+        <label for="node-input-uiType">
+            <i class="fa fa-eye"></i> 显示UI的类型
         </label>
-        <select id="node-input-defaultState">
-            <option value="on">开启</option>
-            <option value="off">关闭</option>
+        <select id="node-input-uiType">
+            <option value="None">None</option>
+            <option value="Title">Title</option>
+            <option value="ModUI">ModUI</option>
         </select>
     </div>
-
+    
     <div class="form-row">
         <label for="node-input-uiText">
-            <i class="fa fa-edit"></i> UI 显示文本
+            <i class="fa fa-font"></i> UI文本 (TranslateMessage本地化文本)
         </label>
-        <input type="text" id="node-input-uiText" placeholder="TranslateMessage本地化文本">
+        <input type="text" id="node-input-uiText" placeholder="Enter UI text">
     </div>
 </script>

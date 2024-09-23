@@ -1,13 +1,13 @@
 <script type="text/javascript">
     RED.nodes.registerType('ec-block-interact', {
         category: 'EC蓝图',
-        color: '#FF5722',
+        color: '#FF8F2C',
         defaults: {
             name: { value: "" },
-            defaultState: { value: "off", required: true },
+            defaultState: { value: "false", required: true },
             blockCoords: { value: "", required: true }
         },
-        inputs: 0,
+        inputs: 1,
         outputs: 1,
         icon: "fa-cube",
         label: function() {
@@ -28,8 +28,8 @@
             <i class="fa fa-power-off"></i> 默认状态
         </label>
         <select id="node-input-defaultState">
-            <option value="on">开启</option>
-            <option value="off">关闭</option>
+            <option value="true">开启</option>
+            <option value="false">关闭</option>
         </select>
     </div>
 

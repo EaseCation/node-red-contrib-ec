@@ -1,10 +1,10 @@
 <script type="text/javascript">
     RED.nodes.registerType('ec-custom-ui', {
         category: 'EC蓝图',
-        color: '#2196F3',
+        color: '#F0E68C',
         defaults: {
             name: { value: "" },
-            uiType: { value: "无", required: true },
+            uiType: { value: "Title", required: true },
             uiText: { value: "", required: true }
         },
         inputs: 1,
@@ -28,7 +28,6 @@
             <i class="fa fa-eye"></i> 显示UI的类型
         </label>
         <select id="node-input-uiType">
-            <option value="无">无</option>
             <option value="Title">Title</option>
             <option value="ModUI">ModUI</option>
         </select>

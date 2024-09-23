@@ -3,7 +3,7 @@ module.exports = function (RED) {
         RED.nodes.createNode(this, config);
         this.defaultState = config.defaultState;  // 默认开启还是关闭
         this.blockCoords = config.blockCoords;    // 方块坐标
-        this.state = this.defaultState === "on";  // 初始状态
+        this.state = this.defaultState === "true";  // 初始状态
 
         let node = this;
 

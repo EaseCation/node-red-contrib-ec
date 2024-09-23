@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ec-terminate', {
+        category: 'EC蓝图',
+        color: '#CA7CEA',
+        defaults: {
+            name: { value: "" },
+            result: { value: "", required: true }
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "fa-clock",
+        label: function() {
+            return this.name || "EC 结束流程";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="ec-terminate">
+    <div class="form-row">
+        <label for="node-input-name">
+            <i class="fa fa-tag"></i> 名称
+        </label>
+        <input type="text" id="node-input-name" placeholder="可视化名称（仅用于编辑器中显示）">
+    </div>
+    
+    <div class="form-row">
+        <label for="node-input-result">
+            <i class="fa fa-font"></i> 游戏结果（字符串）
+        </label>
+        <input type="text" id="node-input-result" placeholder="Enter game result">
+    </div>
+</script>

@@ -6,15 +6,16 @@
   "node-red": {
     "nodes": {
       "ec-trigger-area": "ec-trigger-area.js",
+      "ec-block-interact": "ec-block-interact.js",
       "ec-delay": "ec-delay.js",
       "ec-timer": "ec-timer.js",
       "ec-set-block": "ec-set-block.js",
       "ec-move-entity": "ec-move-entity.js",
       "ec-teleport-player": "ec-teleport-player.js",
       "ec-custom-ui": "ec-custom-ui.js",
-      "ec-block-interact": "ec-block-interact.js",
       "ec-play-sound": "ec-play-sound.js",
-      "ec-give-effect": "ec-give-effect.js"
+      "ec-give-effect": "ec-give-effect.js",
+      "ec-terminate": "ec-terminate.js"
     }
   },
   "keywords": ["node-red", "ec-region", "minecraft"],

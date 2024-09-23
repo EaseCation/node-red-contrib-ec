@@ -7,7 +7,7 @@ module.exports = function(RED) {
         let intervalId;
 
         function startTimer() {
-            if (node.defaultState === "on") {
+            if (node.defaultState === "true") {
                 intervalId = setInterval(() => {
                     node.send({ payload: "timer_tick" });
                 }, node.interval);
