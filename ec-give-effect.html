@@ -1,6 +1,6 @@
 <script type="text/javascript">
     RED.nodes.registerType('ec-give-effect', {
-        category: 'EC蓝图',
+        category: 'EC蓝图/特效',
         color: '#F0E68C',
         defaults: {
             name: { value: "" },
@@ -8,7 +8,7 @@
             effectId: { value: "", required: true },
             effectLevel: { value: 1, required: true },
             duration: { value: 1000, required: true },
-            showParticles: { value: "true", required: true }
+            showParticles: { value: true, required: true }
         },
         inputs: 1,
         outputs: 0,
@@ -52,9 +52,8 @@
         <label for="node-input-showParticles">
             <i class="fa fa-eye"></i> 是否显示粒子效果
         </label>
-        <select id="node-input-showParticles">
-            <option value="true">显示</option>
-            <option value="false">隐藏</option>
-        </select>
+        <label for="node-input-showParticles">
+            <input type="checkbox" id="node-input-autoDisable">
+        </label>
     </div>
 </script>

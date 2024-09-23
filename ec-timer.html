@@ -1,10 +1,10 @@
 <script type="text/javascript">
     RED.nodes.registerType('ec-timer', {
-        category: 'EC蓝图',
-        color: '#CA7CEA',
+        category: 'EC蓝图/时间',
+        color: '#FFFFFF',
         defaults: {
             name: { value: "" },
-            defaultState: { value: "false", required: true },
+            defaultState: { value: true, required: true },
             interval: { value: 1000, required: true },
             uiType: { value: "None", required: true },
             uiText: { value: "", required: true }
@@ -29,10 +29,9 @@
         <label for="node-input-defaultState">
             <i class="fa fa-power-off"></i> 默认状态
         </label>
-        <select id="node-input-defaultState">
-            <option value="true">开启</option>
-            <option value="false">关闭</option>
-        </select>
+        <label for="node-input-defaultState">
+            <input type="checkbox" id="node-input-defaultState">
+        </label>
     </div>
 
     <div class="form-row">
@@ -57,6 +56,6 @@
         <label for="node-input-uiText">
             <i class="fa fa-font"></i> UI文本 (TranslateMessage本地化文本)
         </label>
-        <input type="text" id="node-input-uiText" placeholder="Enter UI text">
+        <input type="text" id="node-input-uiText" placeholder="输入UI本地化文本key">
     </div>
 </script>

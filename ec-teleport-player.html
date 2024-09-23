@@ -1,6 +1,6 @@
 <script type="text/javascript">
     RED.nodes.registerType('ec-teleport-player', {
-        category: 'EC蓝图',
+        category: 'EC蓝图/实体',
         color: '#45ADFF',
         defaults: {
             name: { value: "" },
@@ -27,13 +27,13 @@
         <label for="node-input-validRange">
             <i class="fa fa-map-marker"></i> 有效范围
         </label>
-        <input type="text" id="node-input-validRange" placeholder="Enter range as JSON">
+        <input type="text" id="node-input-validRange" placeholder="输入有效范围">
     </div>
 
     <div class="form-row">
         <label for="node-input-targetCoords">
             <i class="fa fa-location-arrow"></i> 传送目标坐标
         </label>
-        <input type="text" id="node-input-targetCoords" placeholder="Enter target coordinates as JSON">
+        <input type="text" id="node-input-targetCoords" placeholder="输入目标坐标">
     </div>
 </script>
