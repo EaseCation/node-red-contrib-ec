@@ -5,7 +5,8 @@
         defaults: {
             name: { value: "" },
             blockRange: { value: [], required: true },
-            blockId: { value: "", required: true }
+            blockId: { value: "", required: true },
+            blockMeta: { value: 0, required: true }
         },
         inputs: 1,
         outputs: 0,
@@ -36,6 +37,13 @@
             <i class="fa fa-cube"></i> 方块ID
         </label>
         <input type="text" id="node-input-blockId" placeholder="输入方块ID">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-blockMeta">
+            <i class="fa fa-cube"></i> 方块Meta
+        </label>
+        <input type="text" id="node-input-blockMeta" placeholder="输入方块Meta">
     </div>
 </script>
 

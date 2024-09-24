@@ -5,6 +5,7 @@
   "dependencies": {},
   "node-red": {
     "nodes": {
+      "junction": "common/junction.js",
       "ec-trigger-area": "trigger/ec-trigger-area.js",
       "ec-block-interact": "trigger/ec-block-interact.js",
       "ec-delay": "time/ec-delay.js",
