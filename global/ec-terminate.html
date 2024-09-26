@@ -10,7 +10,7 @@
         outputs: 0,
         icon: "font-awesome/fa-arrow-circle-o-right",
         label: function() {
-            return this.name || "结束流程";
+            return this.name || "结束流程" + (this.result ? (": " + this.result) : "");
         },
         paletteLabel: "结束流程"
     });
