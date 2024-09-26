@@ -1,0 +1,37 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ec-event', {
+        category: 'EC蓝图/全局',
+        color: '#58EEEE',
+        defaults: {
+            name: { value: "" },
+            event: { value: "", required: true }
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "font-awesome/fa-flash",
+        label: function() {
+            return this.name || "自定义事件" + (this.event ? (": " + this.event) : "");
+        },
+        paletteLabel: "自定义事件"
+    });
+</script>
+
+<script type="text/html" data-template-name="ec-event">
+    <div class="form-row">
+        <label for="node-input-name">
+            <i class="fa fa-tag"></i> 名称
+        </label>
+        <input type="text" id="node-input-name" placeholder="可视化名称（仅用于编辑器中显示）">
+    </div>
+    
+    <div class="form-row">
+        <label for="node-input-event">
+            <i class="fa fa-font"></i> 事件ID
+        </label>
+        <input type="text" id="node-input-event" placeholder="输入事件ID">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="ec-event">
+    <p>将【自定义事件】传递给状态机，从而调用Java侧代码，实现一些高级的流程控制。</p>
+</script>

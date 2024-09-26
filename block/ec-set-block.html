@@ -4,7 +4,14 @@
         color: '#ED9A8C',
         defaults: {
             name: { value: "" },
-            blockRange: { value: [], required: true },
+            blockRange: {
+                value: "", 
+                required: true,
+                validate: function(v) {
+                    // 正则表达式验证坐标范围格式: x:y:z:x:y:z
+                    return /^-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?$/.test(v);
+                }
+             },
             blockId: { value: "", required: true },
             blockMeta: { value: 0, required: true }
         },
@@ -29,7 +36,7 @@
         <label for="node-input-blockRange">
             <i class="fa fa-map"></i> 方块范围
         </label>
-        <input type="text" id="node-input-blockRange" placeholder="输入方块范围">
+        <input type="text" id="node-input-blockRange" placeholder="输入方块范围: x:y:z:x:y:z">
     </div>
 
     <div class="form-row">

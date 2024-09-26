@@ -4,7 +4,14 @@
         color: '#7FE300',
         defaults: {
             name: { value: "" },
-            coordRange: { value: "", required: true },
+            coordRange: {
+                value: "",
+                required: true,
+                validate: function(v) {
+                    // 正则表达式验证坐标范围格式: x:y:z:x:y:z
+                    return /^-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?$/.test(v);
+                }
+            },
             effectId: { value: "", required: true },
             effectLevel: { value: 1, required: true },
             duration: { value: 1000, required: true },

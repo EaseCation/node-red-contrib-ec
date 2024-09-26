@@ -5,7 +5,14 @@
         defaults: {
             name: { value: "" },
             defaultState: { value: true, required: true },
-            coordRange: { value: "", required: true },
+            coordRange: {
+                value: "",
+                required: true,
+                validate: function(v) {
+                    // 正则表达式验证坐标范围格式: x:y:z:x:y:z
+                    return /^-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?$/.test(v);
+                }
+            },
             autoDisable: { value: false, required: true }
         },
         inputs: 1,
@@ -39,7 +46,7 @@
         <label for="node-input-coordRange">
             <i class="fa fa-map-marker"></i> 坐标范围
         </label>
-        <input type="text" id="node-input-coordRange" placeholder="输入范围坐标">
+        <input type="text" id="node-input-coordRange" placeholder="范围坐标: x:y:z:x:y:z">
     </div>
 
     <div class="form-row">

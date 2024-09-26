@@ -4,8 +4,22 @@
         color: '#45ADFF',
         defaults: {
             name: { value: "" },
-            validRange: { value: [], required: true },
-            targetCoords: { value: [], required: true }
+            validRange: {
+                value: "",
+                required: true,
+                validate: function(v) {
+                    // 正则表达式验证坐标范围格式: x:y:z:x:y:z
+                    return /^-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?$/.test(v);
+                }
+            },
+            targetCoords: { 
+                value: "", 
+                required: true,
+                validate: function(v) {
+                    // 正则表达式验证坐标格式: x:y:z 或 x:y:z:yaw 或 x:y:z:yaw:pitch
+                    return /^-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?(:-?\d+(\.\d+)?){0,2}$/.test(v);
+                }
+             }
         },
         inputs: 1,
         outputs: 0,

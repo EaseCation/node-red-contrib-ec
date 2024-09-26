@@ -4,7 +4,14 @@
         color: '#C2F300',
         defaults: {
             name: { value: "" },
-            playLocation: { value: "", required: true },
+            playLocation: {
+                value: "",
+                required: true,
+                validate: function(v) {
+                    // 正则表达式验证坐标格式: x:y:z
+                    return /^-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?$/.test(v);
+                }
+            },
             soundId: { value: "", required: true },
             volume: { value: 1, required: true },
             pitch: { value: 1, required: true }
