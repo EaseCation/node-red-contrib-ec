@@ -4,7 +4,9 @@
         color: '#E5E5E5',
         defaults: {
             name: { value: "" },
-            delayTime: { value: 1000, required: true }
+            delayTime: { value: 1000, required: true },
+            uiType: { value: "None", required: true },
+            uiText: { value: "", required: false }
         },
         inputs: 1,
         outputs: 1,
@@ -28,6 +30,24 @@
             <i class="fa fa-clock-o"></i> 延迟时间 (毫秒)
         </label>
         <input type="number" id="node-input-delayTime" min="0" placeholder="1000">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-uiType">
+            <i class="fa fa-eye"></i> 显示UI的类型
+        </label>
+        <select id="node-input-uiType">
+            <option value="None">None</option>
+            <option value="Title">Title</option>
+            <option value="ModUI">ModUI</option>
+        </select>
+    </div>
+    
+    <div class="form-row">
+        <label for="node-input-uiText">
+            <i class="fa fa-font"></i> UI文本 (TranslateMessage本地化文本)
+        </label>
+        <input type="text" id="node-input-uiText" placeholder="输入UI本地化文本key">
     </div>
 </script>
 
