@@ -16,6 +16,8 @@
       "ec-custom-ui": "effect/ec-custom-ui.js",
       "ec-play-sound": "effect/ec-play-sound.js",
       "ec-give-effect": "effect/ec-give-effect.js",
+      "ec-init": "global/ec-init.js",
+      "ec-handler": "global/ec-handler.js",
       "ec-event": "global/ec-event.js",
       "ec-terminate": "global/ec-terminate.js"
     }

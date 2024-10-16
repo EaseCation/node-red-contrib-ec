@@ -1,0 +1,37 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ec-handler', {
+        category: 'EC蓝图/全局',
+        color: '#58A6FF',
+        defaults: {
+            name: { value: "" },
+            event: { value: "", required: true }
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "font-awesome/fa-cogs",
+        label: function() {
+            return this.name || "事件处理器" + (this.event ? (": " + this.event) : "");
+        },
+        paletteLabel: "事件处理器"
+    });
+</script>
+
+<script type="text/html" data-template-name="ec-handler">
+    <div class="form-row">
+        <label for="node-input-name">
+            <i class="fa fa-tag"></i> 名称
+        </label>
+        <input type="text" id="node-input-name" placeholder="可视化名称（仅用于编辑器中显示）">
+    </div>
+    
+    <div class="form-row">
+        <label for="node-input-event">
+            <i class="fa fa-font"></i> 事件ID
+        </label>
+        <input type="text" id="node-input-event" placeholder="输入事件ID">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="ec-handler">
+    <p>将【事件处理器】从Java代码侧调用功能，传递给蓝图，实现一些高级的流程控制。</p>
+</script>
