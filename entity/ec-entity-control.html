@@ -1,0 +1,60 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ec-entity-control', {
+        category: 'EC蓝图/实体',
+        color: '#58EEEE',
+        defaults: {
+            name: { value: "" },
+            entityTag: { value: "", required: true },  // 实体Tag
+            controlType: { value: "set-variant", required: true },  // 操作类型
+            value: { value: "" }  // 数据
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "font-awesome/fa-cogs",
+        label: function() {
+            return this.name || "实体控制 (" + this.entityTag + ")";
+        },
+        oneditprepare: function() {
+            // 初始化时可以设置默认值或者读取已有的配置
+        },
+        oneditsave: function() {
+            // 在保存时处理输入数据
+        },
+        paletteLabel: "实体控制"
+    });
+</script>
+
+<script type="text/html" data-template-name="ec-entity-control">
+    <!-- 实体Tag 输入框 -->
+    <div class="form-row">
+        <label for="node-input-entityTag">
+            <i class="fa fa-tag"></i> 实体Tag
+        </label>
+        <input type="text" id="node-input-entityTag" placeholder="请输入实体Tag" required>
+    </div>
+    
+    <!-- 操作类型 下拉框 -->
+    <div class="form-row">
+        <label for="node-input-controlType">
+            <i class="fa fa-cogs"></i> 操作类型
+        </label>
+        <select id="node-input-controlType">
+            <option value="set-variant">设置实体variant数据值</option>
+            <option value="close">移除实体</option>
+            <option value="hook-enable">启用hook</option>
+            <option value="hook-disable">禁用hook</option>
+        </select>
+    </div>
+    
+    <!-- 数据 输入框 -->
+    <div class="form-row">
+        <label for="node-input-value">
+            <i class="fa fa-database"></i> 数据
+        </label>
+        <input type="text" id="node-input-value" placeholder="可选输入值">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="ec-entity-control">
+    <p>控制实体的操作节点，包括设置数据值、移除实体、启用或禁用hook。</p>
+</script>

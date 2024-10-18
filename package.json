@@ -10,7 +10,7 @@
       "ec-delay": "time/ec-delay.js",
       "ec-timer": "time/ec-timer.js",
       "ec-set-block": "block/ec-set-block.js",
-      "ec-move-entity": "entity/ec-move-entity.js",
+      "ec-entity-control": "entity/ec-entity-control.js",
       "ec-teleport-player": "entity/ec-teleport-player.js",
       "ec-custom-ui": "effect/ec-custom-ui.js",
       "ec-play-sound": "effect/ec-play-sound.js",
