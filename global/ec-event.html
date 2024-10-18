@@ -1,10 +1,32 @@
+<style>
+    .kv-row {
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        gap: 8px;
+    }
+    .kv-key {
+        flex: 1;  /* 调整key宽度占比 */
+        margin-right: 10px;
+    }
+    .kv-value {
+        flex: 3;  /* 调整value宽度占比，值部分宽一些 */
+        margin-right: 10px;
+    }
+    .kv-remove-btn {
+        flex-shrink: 0;  /* 防止按钮变形 */
+    }
+</style>
+
 <script type="text/javascript">
     RED.nodes.registerType('ec-event', {
         category: 'EC蓝图/全局',
         color: '#58EEEE',
         defaults: {
             name: { value: "" },
-            event: { value: "", required: true }
+            event: { value: "", required: true },
+            args: { value: {} }  // 存储键值对数据
         },
         inputs: 1,
         outputs: 0,
@@ -12,23 +34,61 @@
         label: function() {
             return this.name || "自定义事件" + (this.event ? (": " + this.event) : "");
         },
-        paletteLabel: "自定义事件"
+        oneditprepare: function() {
+            var args = this.args || {};
+            var container = $("#node-input-args-container");
+
+            // 添加一个键值对行的函数，左右并排布局
+            function addArgRow(key = "", value = "") {
+                var row = $('<div/>', { class: "form-row kv-row" }).appendTo(container);
+                $('<input/>', { type: "text", placeholder: "Key", value: key, class: "node-input-arg-key kv-key" }).appendTo(row);
+                $('<input/>', { type: "text", placeholder: "Value", value: value, class: "node-input-arg-value kv-value" }).appendTo(row);
+                $('<button class="red-ui-button kv-remove-btn">删除</button>', {
+                    click: function() {
+                        row.remove();
+                    }
+                }).appendTo(row);
+            }
+
+            // 初始化已有的键值对
+            Object.keys(args).forEach(function(key) {
+                addArgRow(key, args[key]);
+            });
+
+            // 添加新键值对
+            $("#add-arg-button").click(function() {
+                addArgRow();
+            });
+        },
+        oneditsave: function() {
+            var args = {};
+            $("#node-input-args-container .form-row").each(function() {
+                var key = $(this).find(".node-input-arg-key").val().trim();
+                var value = $(this).find(".node-input-arg-value").val().trim();
+                if (key !== "" && value !== "") {
+                    args[key] = value;
+                }
+            });
+            this.args = args;  // 保存键值对数据为对象
+        }
     });
 </script>
 
 <script type="text/html" data-template-name="ec-event">
     <div class="form-row">
-        <label for="node-input-name">
-            <i class="fa fa-tag"></i> 名称
-        </label>
+        <label for="node-input-name"><i class="fa fa-tag"></i> 名称</label>
         <input type="text" id="node-input-name" placeholder="可视化名称（仅用于编辑器中显示）">
     </div>
     
     <div class="form-row">
-        <label for="node-input-event">
-            <i class="fa fa-font"></i> 事件ID
-        </label>
+        <label for="node-input-event"><i class="fa fa-font"></i> 事件ID</label>
         <input type="text" id="node-input-event" placeholder="输入事件ID">
+    </div>
+    
+    <label for="node-input-event"><i class="fa fa-font"></i> 额外参数（args）</label>
+    <div id="node-input-args-container"></div>
+    <div class="form-row">
+        <button type="button" class="red-ui-button" id="add-arg-button">添加键值对</button>
     </div>
 </script>
 
