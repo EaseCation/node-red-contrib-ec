@@ -43,11 +43,17 @@
                 var row = $('<div/>', { class: "form-row kv-row" }).appendTo(container);
                 $('<input/>', { type: "text", placeholder: "Key", value: key, class: "node-input-arg-key kv-key" }).appendTo(row);
                 $('<input/>', { type: "text", placeholder: "Value", value: value, class: "node-input-arg-value kv-value" }).appendTo(row);
-                $('<button class="red-ui-button kv-remove-btn">删除</button>', {
-                    click: function() {
-                        row.remove();
-                    }
+                
+                // 创建按钮并绑定click事件
+                var removeButton = $('<button/>', {
+                    class: "red-ui-button kv-remove-btn",
+                    text: '删除'
                 }).appendTo(row);
+                
+                // 绑定删除行的点击事件
+                removeButton.click(function() {
+                    row.remove();
+                });
             }
 
             // 初始化已有的键值对
