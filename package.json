@@ -14,6 +14,7 @@
       "ec-teleport-player": "entity/ec-teleport-player.js",
       "ec-custom-ui": "effect/ec-custom-ui.js",
       "ec-play-sound": "effect/ec-play-sound.js",
+      "ec-play-particle": "effect/ec-play-particle.js",
       "ec-give-effect": "effect/ec-give-effect.js",
       "ec-init": "global/ec-init.js",
       "ec-handler": "global/ec-handler.js",

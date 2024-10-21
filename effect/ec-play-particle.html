@@ -1,0 +1,59 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ec-play-particle', {
+        category: 'EC蓝图/特效',
+        color: '#DAA520',
+        defaults: {
+            name: { value: "" },
+            playLocation: {
+                value: "",
+                required: true,
+                validate: function(v) {
+                    // 正则表达式验证坐标格式: x:y:z
+                    return /^-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?$/.test(v);
+                }
+            },
+            particleId: { value: "", required: true },
+            particleMolang: { value: "", required: false }
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "font-awesome/fa-fire",
+        label: function() {
+            return (this.name || "播放粒子") + (this.particleId ? " (" + this.particleId + ")" : "");
+        },
+        paletteLabel: "播放粒子",
+    });
+</script>
+
+<script type="text/html" data-template-name="ec-play-particle">
+    <div class="form-row">
+        <label for="node-input-name">
+            <i class="fa fa-tag"></i> 名称
+        </label>
+        <input type="text" id="node-input-name" placeholder="可视化名称（仅用于编辑器中显示）">
+    </div>
+    <div class="form-row">
+        <label for="node-input-playLocation">
+            <i class="fa fa-map-marker"></i> 播放位置
+        </label>
+        <input type="text" id="node-input-playLocation" placeholder="输入播放位置坐标">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-particleId">
+            <i class="fa fa-fire"></i> 粒子ID
+        </label>
+        <input type="text" id="node-input-particleId" placeholder="输入粒子ID">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-particleMolang">
+            <i class="fa fa-code"></i> 粒子Molang
+        </label>
+        <input type="text" id="node-input-particleMolang" placeholder="输入粒子Molang">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="ec-play-particle">
+    <p>在某一坐标播放指定粒子。</p>
+</script>

@@ -5,7 +5,8 @@
         defaults: {
             name: { value: "" },
             uiType: { value: "Title", required: true },
-            uiText: { value: "", required: true }
+            uiText: { value: "", required: true },
+            uiTextSub: { value: "", required: false }
         },
         inputs: 1,
         outputs: 0,
@@ -40,6 +41,7 @@
         </label>
         <select id="node-input-uiType">
             <option value="Title">Title</option>
+            <option value="ActionBar">ActionBar</option>
             <option value="ModUI">ModUI</option>
         </select>
     </div>
@@ -49,6 +51,13 @@
             <i class="fa fa-font"></i> UI文本 (TranslateMessage本地化文本)
         </label>
         <input type="text" id="node-input-uiText" placeholder="输入UI本地化文本key">
+    </div>
+    
+    <div class="form-row">
+        <label for="node-input-uiTextSub">
+            <i class="fa fa-font"></i> UI副文本 (TranslateMessage本地化文本)
+        </label>
+        <input type="text" id="node-input-uiTextSub" placeholder="输入UI本地化文本key">
     </div>
 </script>
 
