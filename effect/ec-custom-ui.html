@@ -6,7 +6,9 @@
             name: { value: "" },
             uiType: { value: "Title", required: true },
             uiText: { value: "", required: true },
-            uiTextSub: { value: "", required: false }
+            uiTextSub: { value: "", required: false },
+            uiSendTargetType: { value: "All", required: true },
+            uiSendTarget: { value: "", required: false }
         },
         inputs: 1,
         outputs: 0,
@@ -58,6 +60,23 @@
             <i class="fa fa-font"></i> UI副文本 (TranslateMessage本地化文本)
         </label>
         <input type="text" id="node-input-uiTextSub" placeholder="输入UI本地化文本key">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-uiSendTargetType">
+            <i class="fa fa-gear"></i> UI发送目标类型
+        </label>
+        <select id="node-input-uiSendTargetType">
+            <option value="All">All</option>
+            <option value="Team">Team</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-uiSendTarget">
+            <i class="fa fa-font"></i> UI发送目标
+        </label>
+        <input type="text" id="node-input-uiSendTarget" placeholder="输入UI发送目标">
     </div>
 </script>
 
