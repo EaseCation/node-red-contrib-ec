@@ -12,6 +12,7 @@
                     return /^-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?$/.test(v);
                 }
              },
+            blockReplace: { value: "", required: true },
             blockId: { value: "", required: true },
             blockMeta: { value: 0, required: true }
         },
@@ -37,6 +38,13 @@
             <i class="fa fa-map"></i> 方块范围
         </label>
         <input type="text" id="node-input-blockRange" placeholder="输入方块范围: x:y:z:x:y:z">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-replaceId">
+            <i class="fa fa-cube"></i> 替换方块
+        </label>
+        <input type="text" id="node-input-replaceId" placeholder="留空表示不替换，直接全部set">
     </div>
 
     <div class="form-row">
