@@ -11,7 +11,8 @@
                     // 正则表达式验证坐标范围格式: x:y:z:x:y:z
                     return /^-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?:-?\d+(\.\d+)?$/.test(v);
                 }
-             },
+            },
+            update: { value: false, required: true },
             replaceId: { value: "", required: false },
             blockId: { value: "", required: true },
             blockMeta: { value: 0, required: true }
@@ -40,6 +41,12 @@
         <input type="text" id="node-input-blockRange" placeholder="输入方块范围: x:y:z:x:y:z">
     </div>
 
+    <div class="form-row">
+        <label for="node-input-update">
+            <i class="fa fa-cube"></i> 更新周围方块
+        </label>
+        <input type="checkbox" id="node-input-update">
+    </div>
     <div class="form-row">
         <label for="node-input-replaceId">
             <i class="fa fa-cube"></i> 替换方块
